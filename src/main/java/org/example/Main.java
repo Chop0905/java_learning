@@ -1,5 +1,6 @@
 package org.example;
 
+import StudentUtil.GenderCount;
 import StudentUtil.StudentAverage;
 import StudentUtil.StudentStudy;
 
@@ -8,9 +9,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Student stu1 = new Student("a",27,"male");
+        Student stu1 = new Student("a",27,"female");
         Student stu2 = new Student("b",32,"male");
-        Student stu3 = new Student("c",11,"male");
+        Student stu3 = new Student("c",11,"female");
         Student stu4 = new Student("d",43,"male");
         List<Student> students = new ArrayList<Student>();
         students.add(stu1);
@@ -20,5 +21,7 @@ public class Main {
 
         double average = StudentAverage.average(students);
         System.out.println(average);
+        double male_count = GenderCount.count(students);
+        System.out.println(male_count);
     }
 }
