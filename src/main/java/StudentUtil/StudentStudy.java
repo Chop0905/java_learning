@@ -1,5 +1,5 @@
 package StudentUtil;
-import org.example.Student;
+import entity.Student;
 public class StudentStudy {
     private StudentStudy(Student student){}
     public static void study(Student student){

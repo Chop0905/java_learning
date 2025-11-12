@@ -2,7 +2,7 @@ package org.example;
 
 import StudentUtil.GenderCount;
 import StudentUtil.StudentAverage;
-import StudentUtil.StudentStudy;
+import entity.Student;
 
 import java.util.ArrayList;
 import java.util.List;

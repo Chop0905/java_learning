@@ -1,6 +1,6 @@
 package StudentUtil;
 
-import org.example.Student;
+import entity.Student;
 import java.util.List;
 
 public class StudentAverage {
