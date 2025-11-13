@@ -9,19 +9,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Student stu1 = new Student("a",27,"female");
-        Student stu2 = new Student("b",32,"male");
-        Student stu3 = new Student("c",11,"female");
-        Student stu4 = new Student("d",43,"male");
-        List<Student> students = new ArrayList<Student>();
-        students.add(stu1);
-        students.add(stu2);
-        students.add(stu3);
-        students.add(stu4);
+        Student stu = new Student("a",27, Student.Gender.MALE);
 
-        double average = StudentAverage.average(students);
-        System.out.println(average);
-        double male_count = GenderCount.count(students);
-        System.out.println(male_count);
+        System.out.println(stu.toString());
     }
 }

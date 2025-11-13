@@ -1,10 +1,15 @@
 package entity;
 
 public class Student {
+    public enum Gender{
+        MALE,
+        FEMALE
+    };
     private String name;
     private int age;
-    private  String gender;
-    public Student(String name, int age, String gender){
+    private Gender gender;
+
+    public Student(String name, int age, Gender gender){
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -18,7 +23,7 @@ public class Student {
         return age;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
@@ -30,7 +35,12 @@ public class Student {
         this.age = age;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return "Student [name=" + name + ", age=" + age + ", gender=" + gender + "]";
     }
 }
