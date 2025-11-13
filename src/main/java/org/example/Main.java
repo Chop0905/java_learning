@@ -9,8 +9,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Student stu = new Student("a",27, Student.Gender.MALE);
-
-        System.out.println(stu.toString());
+        Student stu = new Student("卢承福",24, Student.Gender.MALE);
+        System.out.println(stu.getClass());
     }
 }
