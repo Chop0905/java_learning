@@ -1,4 +1,4 @@
-package StudentUtil;
+package util;
 
 public class SnowflakeIdGenerator {
     private static final long START_TIMESTAMP = 1485686400000L; //时间戳
@@ -38,7 +38,7 @@ public class SnowflakeIdGenerator {
             if (sequence == 0L) {
                 timestamp = nextMill();
             }
-        }else{
+        } else {
             sequence = 0L;
         }
         lastTimestamp = timestamp;
@@ -48,6 +48,7 @@ public class SnowflakeIdGenerator {
                 | (machineId << MACHINE_LEFT)
                 | sequence;
     }
+
     private long nextMill() {
         long mill = currentTime();
         while (mill <= lastTimestamp) {

@@ -1,11 +1,13 @@
-package StudentUtil;
+package util;
 
 import entity.Student;
+
 import java.util.List;
 
 public class StudentAverage {
 
-    private StudentAverage() {}
+    private StudentAverage() {
+    }
 
     public static double average(List<Student> students) {
         if (students == null || students.isEmpty()) {
