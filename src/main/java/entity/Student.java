@@ -13,6 +13,7 @@ public class Student {
     ;
     private int age;
     private Gender gender;
+
     public Student(String name, int age, Gender gender) {
         this.id = ID_GEN.nextId();
         this.name = name;
@@ -64,7 +65,7 @@ public class Student {
         if (obj == null || obj.getClass() != this.getClass()) return false;
         Student other = (Student) obj;
         //返回字段比较结果
-        return Objects.equals(this.name, other.name) && Objects.equals(this.age, other.age) && Objects.equals(this.gender, other.gender);
+        return Objects.equals(this.name, other.name) && this.age == other.age && this.gender == other.gender;
     }
 
     @Override

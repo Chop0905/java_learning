@@ -1,16 +1,19 @@
-package org.example;
+package Test1;
 
-import util.GenderCount;
-import util.Logger;
+import entity.GenderCountResult;
 import entity.Student;
-import util.StudentAverage;
+import org.junit.jupiter.api.Test;
+import util.GenderCount;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
-    public static void main(String[] args) {
-        Logger.info("程序开始运行");
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class GenderTest {
+
+    @Test
+    void testGender() {
         Student stu = new Student("a",24, Student.Gender.MALE);
         Student stu1 = new Student("b",19, Student.Gender.FEMALE);
         Student stu2 = new Student("c",26, Student.Gender.MALE);
@@ -27,11 +30,10 @@ public class Main {
         students.add(stu4);
         students.add(stu5);
 
-        //输出结果
-        System.out.println("男比例："+GenderCount.count(students).getMaleRatio());
-        System.out.println("女比例："+GenderCount.count(students).getFemaleRatio());
-        System.out.println("平均年龄："+ StudentAverage.average(students));
-
-        Logger.info("程序正常结束");
+        GenderCountResult result = GenderCount.count(students);
+        assertEquals(3, result.getFemaleCount());
+        assertEquals(3, result.getMaleCount());
+        assertEquals(0.5, result.getFemaleRatio(), 0.0001);
+        assertEquals(0.5, result.getMaleRatio(), 0.0001);
     }
 }

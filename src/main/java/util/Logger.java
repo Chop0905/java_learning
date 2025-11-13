@@ -9,7 +9,7 @@ public class Logger {
     }
 
     public static void warn(String message) {
-        System.out.println(now() + "[WARNING] " + message);
+        System.err.println(now() + "[WARNING] " + message);
     }
 
     public static void info(String message) {
@@ -21,7 +21,7 @@ public class Logger {
     }
 
     public static void error(String message) {
-        System.out.println(now() + "[ERROR] " + message);
+        System.err.println(now() + "[ERROR] " + message);
     }
 
     public static void fatal(String message) {

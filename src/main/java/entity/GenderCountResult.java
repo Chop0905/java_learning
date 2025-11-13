@@ -11,13 +11,14 @@ public class GenderCountResult {
         this.sum = maleCount + femaleCount;
     }
 
-    ;
 
     public double getMaleRatio() {
         return (double) maleCount / (double) sum;
     }
-
     public double getFemaleRatio() {
         return (double) femaleCount / (double) sum;
     }
+
+    public int getMaleCount() {return maleCount;}
+    public int getFemaleCount() {return femaleCount;}
 }
