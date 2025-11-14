@@ -1,5 +1,6 @@
 package org.java_learning;
 
+import service.StudentService;
 import util.GenderCount;
 import util.Logger;
 import entity.Student;
@@ -33,7 +34,10 @@ public class Main {
             }
 
             //业务代码
+            switch (option) {
+                case 1:
 
+            }
             if (option == 0) {
                 break;  // 放在 switch 后面，不会触发拆箱 null 问题
             }

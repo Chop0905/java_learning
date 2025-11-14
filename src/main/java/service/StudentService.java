@@ -115,16 +115,26 @@ public class StudentService {
     }
 
     // 4) 按名查询
-    public Student getByName(String name) {
-        for (int i = 0; i < students.size(); i++) {
-            Student s = students.get(i);
-            if (s.getName().equals(name)) {
-                System.out.println("查询成功");
-                return s;
+    public List<Student> getByName(String name) {
+        List<Student> studentList = new ArrayList<>();
+        if (name == null || name.trim().isEmpty()) {
+            System.out.println("输入的名字有误。");
+            return studentList;
+        }
+        for (Student s : students) {
+            if (s.getName().contains(name)) {
+                studentList.add(s);
             }
         }
-        System.out.println("未查询到：" + name);
-        return null;
+        if (studentList.isEmpty()) {
+            System.out.println("未查询到：" + name);
+            return null;
+        }
+        return studentList;
     }
     // 5) 列表
+    public List<Student> list() {
+        return students;
+    }
+
 }
