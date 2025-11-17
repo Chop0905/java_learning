@@ -1,7 +1,7 @@
 package Test1;
 
 import entity.Student;
-import util.StudentAverage;
+import util.StudentStatistics;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +16,7 @@ public class AgeTest {
                 new Student("李四", 30, Student.Gender.MALE)
         );
 
-        double avg = StudentAverage.average(list);
+        double avg = StudentStatistics.average(list);
 
         assertEquals(25.0, avg, 0.0001);
     }

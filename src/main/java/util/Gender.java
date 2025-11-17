@@ -5,9 +5,16 @@ import entity.GenderCountResult;
 
 import java.util.List;
 
-public class GenderCount {
+public class Gender {
     //工具类必须加
-    private GenderCount() {
+    private Gender() {}
+
+    public static Student.Gender parseGender(String gender) {
+        if (gender == null) return null;
+        gender = gender.trim();
+        if (gender.equals("男")) return Student.Gender.MALE;
+        if (gender.equals("女")) return Student.Gender.FEMALE;
+        return null;
     }
 
     public static GenderCountResult count(List<Student> students) {

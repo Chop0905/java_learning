@@ -3,7 +3,7 @@ package Test1;
 import entity.GenderCountResult;
 import entity.Student;
 import org.junit.jupiter.api.Test;
-import util.GenderCount;
+import util.Gender;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public class GenderTest {
         students.add(stu4);
         students.add(stu5);
 
-        GenderCountResult result = GenderCount.count(students);
+        GenderCountResult result = Gender.count(students);
         assertEquals(3, result.getFemaleCount());
         assertEquals(3, result.getMaleCount());
         assertEquals(0.5, result.getFemaleRatio(), 0.0001);

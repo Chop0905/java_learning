@@ -1,9 +1,12 @@
 package service;
 
 import entity.Student;
+import util.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static util.Gender.parseGender;
 
 /*
  * 用 List 管一个“表”；实现最基本的增删改查
@@ -15,15 +18,8 @@ import java.util.List;
  * 列表时附带“平均年龄 & 性别统计”。
  * */
 public class StudentService {
-    private final List<Student> students = new ArrayList<Student>();
+    private static final List<Student> students = new ArrayList<Student>();
 
-    private Student.Gender parseGender(String gender) {
-        if (gender == null) return null;
-        gender = gender.trim();
-        if (gender.equals("男")) return Student.Gender.MALE;
-        if (gender.equals("女")) return Student.Gender.FEMALE;
-        return null;
-    }
 
     // 1) 新增学生
     public boolean add(String name, int age, String gender) {
@@ -52,7 +48,7 @@ public class StudentService {
         //都校验通过后
         Student student = new Student(name, age, g);
         students.add(student);
-        System.out.println("添加成功！" + student);
+        Logger.info("学生添加成功：" + student);
 
         return true;
     }
@@ -132,8 +128,9 @@ public class StudentService {
         }
         return studentList;
     }
+
     // 5) 列表
-    public List<Student> list() {
+    public static List<Student> list() {
         return students;
     }
 
